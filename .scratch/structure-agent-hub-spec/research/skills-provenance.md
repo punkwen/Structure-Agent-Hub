@@ -4,7 +4,7 @@
 
 - 取证日期：**2026-11-06**，全部为本机只读静态取证；未修改 tigerkin-skills 任何文件，未运行/安装/构建任何软件。
 - 版本锚点：`master` @ `c244fda622650715c8269784535e256a74b54a8b`（提交信息 `auto: tigerkin-skills 2026/07/27 周一  4:38:14.61`，2026-07-27T04:38:14+08:00）。工作树干净：`git status --porcelain` 为 0 项；`StructureDev/` 与 `skills/structure-software-dev/` 下无未跟踪/忽略文件。全仓 18 个提交。
-- 远端 `https://gitee.com/punkwen/tigerkin-skills.git` 的**公开可见性未能核实**：本环境匿名访问网页返回 403（含浏览器 UA 亦然）、Gitee API v5 返回 404（"Not Found Project"）、`git ls-remote` 需要凭据。按票面要求不提供公开链接，下文以本地路径 + 提交哈希引用。
+- 远端为 Gitee 上 `punkwen/tigerkin-skills`（URL 此处不写出：其公开可见性未能核实，票面要求仅在安全且获准时提供公开链接）；本环境匿名访问网页返回 403（含浏览器 UA 亦然）、Gitee API v5 返回 404（"Not Found Project"）、`git ls-remote` 需要凭据。下文以本地路径 + 提交哈希引用。
 
 ## 1. 问题
 
@@ -72,7 +72,7 @@
 
 - 仓库根与 `skills/structure-software-dev/` 下**无 LICENSE/COPYING/NOTICE 文件**（唯一的 `General/html-ppt/LICENSE` 在无关目录）。README.md/en 是 Gitee 模板占位文本，无许可声明。
 - 全部 24 个 SKILL.md frontmatter 只有 `name`/`description`，**无一含 `license` 字段**。
-- 仓库根 `.gitignore` 不存在（仅 `mattpocock-skills-zh-CN-main/.gitignore`）；`.omc/state/`（本地 Agent 会话状态，含用户名 `wenzhibin`、历史路径 `I:\DotNetProgram\…`）被跟踪入库——属个人信息入库，登记为发布前须清除项。
+- 仓库根 `.gitignore` 不存在（仅 `mattpocock-skills-zh-CN-main/.gitignore`）；`.omc/state/`（本地 Agent 会话状态缓存，2 个 JSON 文件）被跟踪入库，内含本机 Windows 用户名与历史工作路径（具体值此处不复制）——属个人信息入库，登记为发布前须清除项。
 
 ### 6.2 第三方权利人与标记（逐 Skill）
 
@@ -86,8 +86,8 @@
 | `yjk-runtime-api-function` | `references/*.md` 9 个（API 说明 + 宏定义，`design-result-macros-full.md` 等为宏清单） | 无声明 | 无 | `NOASSERTION`。 |
 | `yjk-runtime-api-post-function` | `reference/设计结果接口说明_new.md`（C++ 头文件直出，含 `//dsnPro.h`）+ `设计结果宏定义.md` + 2 个 `.cs` 脚本 | 无声明 | 无 | `NOASSERTION`；头文件直出文本是厂商 SDK 材料特征。与[哪些源码、依赖与产物可以纳入和分发](../issues/05-distribution-boundary.md#answer) §9 的「反编译 YJKAPI.dll」指示项同类风险。 |
 | `yjk-dsnmodel` / `dtl-model` | 数据库表结构参考（厂商数据库 schema 文档特征） | 无声明 | 无 | `NOASSERTION`。 |
-| `sap2000-s2k-expert` | `docs/sap2000_s2k_manual.md` 自述"基于对多个 .s2k 文件的分析"整理（疑似用户自撰，无声明）；`exapmle/**` 36 个 .s2k 为外部模型文件 | 手册：疑似用户自撰（无声明）；模型：原工程作者未知 | 无 | 手册权利人 `NOASSERTION`（待用户声明）；模型文件见 §6.4。 |
-| `midas-api` | SKILL.md + `references/midas-api-endpoints.md` 均为自研编写；后者引用官方在线手册 URL | 未做与官方手册的逐字比对，无直接复制证据 | 无 | 相对干净；仍待用户权属声明确认。 |
+| `sap2000-s2k-expert` | `docs/sap2000_s2k_manual.md` 文内自述"基于对多个 .s2k 文件的分析"整理（自撰**未经证实**，无声明）；`exapmle/**` 36 个 .s2k 为外部模型文件 | 手册：仅文内自述，无独立证据；模型：原工程作者未知 | 无 | 手册权利人 `NOASSERTION`（待用户声明）；模型文件见 §6.4。 |
+| `midas-api` | SKILL.md + `references/midas-api-endpoints.md` 未检出第三方文本复制证据（**未做**与官方手册的逐字比对，自撰程度未证实） | 无声明 | 无 | 权利人与自撰程度 `NOASSERTION`；仍待用户权属声明确认。 |
 | `3d3s-expert` | `docs/dddsss.md`（关键字格式整理）+ `res/**` 6 个 .3d3s 模型（含 `Euler2025 SR10`、`Grida R2025`、`TigerKinPro` 导出标记） | 无声明 | 无 | 文档 `NOASSERTION`；模型文件来源未知。 |
 
 ### 6.3 汇总
@@ -104,10 +104,12 @@
 
 - **MCP 依赖：0 处。** 两树全部跟踪文件对 `mcp`/`tgk-` 的检索只有 2 处假阳性（`BeamCPXS` 函数名、`.skill` 二进制随机字节），解包复核后为 0。没有任何 SKILL.md 声明依赖某个 MCP server、工具名或版本；frontmatter 只有 `name`/`description`。按[仓库如何组织，Skill 与 MCP 如何分工](../issues/06-repository-skill-boundary.md#answer) §4 的"声明实际需要的 MCP"要求，这些 Skill 目前**没有可核对的 MCP 依赖声明**（既非"无依赖"的证明，也非"有依赖"的证据）。
 - **文本声明的软件前提**（静态阅读，均未运行验证）：
-  - `sap2000-api`/`etabs-api-function`：SAP2000/ETABS 本体与 COM/.NET OAPI（`SAP2000v1.dll`、`ETABSv1.dll` 由用户自备）。
-  - YJK 六项：YJK 安装与 `CsToYjk.dll`/`APIData.dll`/`DataFuncApplication.dll`/`YJKDesign.dll`，以及 `yjks_csload`/`yjks_csreload` 加载机制。
+  - `sap2000-api`：SAP2000 本体与 OAPI（`SAP2000v1.dll` 由用户自备；SKILL.md 未声明具体版本）。
+  - `etabs-api-function`：ETABS v22+ 与 .NET Standard 2.0 形态的 `ETABSv1.dll`（SKILL.md 明确写出该版本条件）。
+  - `yjk-modeling-api`/`yjk-modeling-foundation-api`：YJK 安装与 `CsToYjk.dll`/`APIData.dll`/`DataFuncApplication.dll`/`Jccad` 系列 ydb 读写（两 Skill 正文均声明 DLL/环境前提）。
+  - `yjk-runtime-api-function`/`yjk-runtime-api-post-function`：YJK 平台内运行的 C# DLL 插件（`[CommandMethod]`、`yjks_csload`/`yjks_csreload`、`YJKDesign.dll`）。
   - `midas-api`：`localhost:10084` 的 MIDAS API 服务。
-  - `opensees-tcl-expert`：无运行时（纯文档）；`3d3s-expert`/`dtl-model`/`sap2000-s2k-expert`/`yjk-dsnmodel`：文件格式类，无运行时。
+  - `opensees-tcl-expert`：无运行时（纯文档）；`3d3s-expert`/`dtl-model`/`sap2000-s2k-expert`/`yjk-dsnmodel`：文件格式类，无运行时。YJK 的 `dtl-model`/`yjk-dsnmodel` 描述的 ydb 数据结构独立于 YJK 进程即可读取（静态文档），此为文本推断、未验证。
 - **随附数据文件即运行依赖**：技能正文显式引用各自 `docs/`/`references/`/`res/`/`exapmle/`；`yjk-dsnmodel` 引用的 259 张图片缺失（功能性缺陷，非权利问题）。
 - **客户端清单**：仅 `yjk-modeling-foundation-api/agents/openai.yaml`（`display_name`/`default_prompt`）；其余 11 个无 manifest。未验证任何客户端实际加载行为。
 
@@ -115,6 +117,7 @@
 
 - 18 个提交；内容窗口最早观察到 `238afda1`（2026-05-08），HEAD `c244fda6`（2026-07-27）；仅 `master` 分支、无 tag。多数提交为 `auto:`/`update` 类快照提交。
 - **厂商二进制：0。** 全历史新增文件扫描无 `.dll`/`.exe`/`.pyd`/`.lic`/`.pfx`/`.pem`/`.nupkg` 等厂商二进制或凭据类文件（全仓 0 处）。
+- **审计深度限定**：历史扫描按新增/删除**文件名**扩展名筛查 + `.s2k` 内容检索 + 对已知名单（§9、§8 清单）的内容抽查；未对全部历史 blob 的内容做穷尽式扫描，历史中被修改的文件（如 `.omc/state` 自身有过修改提交）只按现状取证。其余历史内容按未逐字审记，不据此断言历史干净。
 - 历史与当前树中的第三方/敏感内容（仅报存在性与位置，不复制内容）：
   - `mattpocock-skills-zh-CN-main.zip`（`9f393282` 加入）与同名目录：MIT 第三方 skill 集；
   - `Obsidian/update/llm-wiki-isolation-report-review/reference/reference_bundle.zip`（65 项）与 `llm-wiki-outofcode-report-review/reference/reference_bundle.zip`（143 项，`3467a906` 加入）：中文结构工程书籍/文章/规范文档集合（条目名含《SAP2000 中文版技术指南》、《ETABS结构设计实例详解》、朱炳寅著作、GB 50011 应用分析等）→ 第三方版权材料；
@@ -128,14 +131,15 @@
 - `mattpocock-skills-zh-CN-main/`（108 文件）+ `mattpocock-skills-zh-CN-main.zip`（187,343 B）：`github.com/mattpocock/skills` 的简体中文本地化（README 自述由 `vinvcn/mattpocock-skills-zh-CN` 维护），`LICENSE` = MIT（Copyright (c) 2026 Matt Pocock）；zip 与目录 108/108 逐字节一致。→ 参考件，不属于 Hub 可索引 Skill。
 - 两个 Obsidian `reference_bundle.zip`（§8）：书籍/规范文章集合，权利 `NOASSERTION` → 不属于可索引 Skill；若公开历史含它们，须按[哪些源码、依赖与产物可以纳入和分发](../issues/05-distribution-boundary.md#answer) §8 审查。
 - `RhinoGHDev/`（14,289 文件，`gh-api`/`rhino-api` 等）：McNeel Rhino/Grasshopper API 文档导出（文件名含 `License…` 者均为 API 文档页，非许可文本）→ 第三方衍生，不在本票范围，仅报存在。
+- `General/html-ppt/`（README 自述作者 lewis <sudolewis@gmail.com>，安装来源 `github.com/lewislulu/html-ppt-skill`，自带 `LICENSE` = MIT；与 `skills/office/html-ppt/` 目录逐字节一致）→ 第三方 Skill 的本地复制，不属于 Hub 可索引 Skill 范围；上游权利声明未逐项核验。
 - `LBT/`（Ladybug Tools honeybee/ladybug 系）、`General/`、`TigerkinClaw/`、`Obsidian/` 其余、`skills/` 其余五类：超出本票 `StructureDev` 范围，未逐项审，仅报告存在；其中 `TigerkinClaw/yjk-*` 等结构相关条目若未来要纳入，须另行取证。
 
 ## 10. 对后续决策的约束与并列选项（不选择）
 
 - 索引若指向 `skills/structure-software-dev/<name>`，版本锚点可固定为 `17d7b1c2`（或 HEAD `c244fda6`）；`StructureDev/` 不再作为来源。此为证据判定，最终范围由[哪些现有结构专业 Skill 可以纳入 Hub 索引](../issues/14-existing-skills-index-scope.md)确认。
-- 公开发布前须逐项解决的阻断清单（事实，非结论）：CSI ETABS/SAP2000 文档再分发权缺失（SAP2000 连声明都被剥离）、YJK 厂商头文件原文、OpenSees PEER 手册译文与 OpenSeesPy 文档导出、s2k 样例 `LicenseNum=`（票 05 §5 直接禁止发布）、3d3s 模型文件来源、两个第三方 zip、`.omc` 个人数据、Gitee 可见性核实。
-- 若 Hub 仅做私有/内部索引（不公开、不复制），票 06 的"只索引"路径不触发上述再分发问题，但仍须满足票 06 的"来源、权利、依赖、可访问历史审计"要求——本票提供了该审计的事实层，权利层缺用户声明。
-- 并列选项（由票 14 决定）：(a) 全部 12 项候选待审后逐项确认；(b) 先纳入自编成分明确、无第三方衍生正文的条目；(c) 全部暂不索引直到权利补齐。本票不选。
+- 公开发布前须逐项解决的阻断清单（事实，非结论）：CSI ETABS/SAP2000 文档再分发权缺失（SAP2000 连声明都被剥离）、YJK 厂商头文件原文、OpenSees PEER 手册译文与 OpenSeesPy 文档导出、s2k 样例 `LicenseNum=`（[哪些源码、依赖与产物可以纳入和分发](../issues/05-distribution-boundary.md#answer) §5 直接禁止发布）、3d3s 模型文件来源、两个第三方 zip、`.omc` 个人数据、Gitee 可见性核实。
+- 若 Hub 仅做私有/内部索引（不公开、不复制），[仓库如何组织，Skill 与 MCP 如何分工](../issues/06-repository-skill-boundary.md#answer) 的"只索引"路径不触发上述再分发问题，但仍须满足该票的"来源、权利、依赖、可访问历史审计"要求——本票提供了该审计的事实层，权利层缺用户声明。
+- 并列选项（由[哪些现有结构专业 Skill 可以纳入 Hub 索引](../issues/14-existing-skills-index-scope.md)决定）：(a) 全部 12 项候选待审后逐项确认；(b) 先纳入自编成分明确、无第三方衍生正文的条目；(c) 全部暂不索引直到权利补齐。本票不选。
 
 ## 11. 明确不声称
 
