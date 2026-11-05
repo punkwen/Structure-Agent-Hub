@@ -94,5 +94,5 @@ Parent: ../map.md
 - 2026-11-06 第一轮：用户选择 Q1 = OpenSeesPy，覆盖推荐 ①（CLI batch）；Q2–Q5 按推荐（首批能力 a+b、逐次确认、单进程串行、不计入核心门槛且独立仓库）。
 - 2026-11-06 复核指正：上一轮把 exit code 当成功判据错误。本机同 build（`3.8.0 64-Bit 6e552935`）实测：正常 deck 与含 `invalid command name` 的 deck 均 `exit 0`；`1>/dev/null` 后 banner、`puts`、报错仍在 → 全部输出走 stderr，stdout 为空。该事实只说明 CLI 的 exit code 不可作判据，不适用于 OpenSeesPy 子进程。
 - 2026-11-06 第二轮：用户确认 Q6'–Q10（runner 发 marker；运行目录 + 产物清单 + 合并日志；检测不安装；新建独立仓库；一正两负验收）。runner 语义用本地纯 Python 验证：`runpy.run_path` 无异常 → marker；异常 → traceback 且无 marker；`SystemExit(0)` 算完成，`SystemExit(非 0)` 算失败。
-- 2026-11-06 复核修正：完成判据改为 runner 写独立状态文件，而非在合并日志里找 token（脚本可自行打印同名 token，日志通道不可信）；`SystemExit` 语义与 runner 返回码写明。另删除「两条入口互斥」的越权表述，并把 OpenSeesPy 运行时行为标为推断、列入 09。
+- 2026-11-06 复核修正：完成判据改为 runner 写独立状态文件，而非在合并日志里找 token（脚本可自行打印同名 token，日志通道不可信）；`SystemExit` 语义与 runner 返回码写明。另删除「两条入口互斥」的越权表述，并把 OpenSeesPy 运行时行为标为推断、列入 [核验选定 OpenSees 运行路径的版本兼容性](09-opensees-runtime-verification.md)。
 - 2026-11-06 修正后自检：用纯 Python 复现状态文件 runner —— 正常脚本 → `TGC_DONE`/exit 0；抛异常 → `TGC_FAILED` + traceback/exit 1；脚本先打印 `TGC_DONE` 再抛异常仍记 `TGC_FAILED`（日志 token 不可冒领）；`SystemExit(0)` → `TGC_DONE`；`SystemExit(3)` → `TGC_FAILED` 且记录 code。未涉及 OpenSeesPy 本体。

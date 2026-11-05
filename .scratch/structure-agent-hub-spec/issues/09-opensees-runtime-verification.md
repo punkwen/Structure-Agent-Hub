@@ -18,4 +18,4 @@ Parent: ../map.md
 2. 跑一个最小模型（如悬臂或门式刚架）并读取一次输出，记录输入、输出与错误证据；对照 [OpenSees 有哪些可用的集成路径与运行约束](04-opensees-integration-evidence.md) 所述版本/Python 兼容性冲突，裁定其在该环境是否成立。
 3. 核实 [OpenSees MCP 首批能力应止于哪里](07-opensees-capability-scope.md#answer) 标为推断的运行时行为：`ops.analyze()` 失败时的返回与日志表现、OpenSees `Error`/`WARNING` 行能否从合并日志可靠识别、recorder 相对路径是否落在进程 CWD。
 
-只核验该单一目标，不遍测未知平台、不改 MCP/Skill、不把失败当成功；下载/许可等前提缺失时明确记录并保持阻塞。结果作为 [一键部署应承诺什么行为与验收结果](08-deployment-contract.md) 可用性承诺与 07 验收参照的事实，不替人选择支持范围。
+只核验该单一目标，不遍测未知平台、不改 MCP/Skill、不把失败当成功；下载/许可等前提缺失时明确记录并保持阻塞。结果作为 [一键部署应承诺什么行为与验收结果](08-deployment-contract.md) 可用性承诺与 [OpenSees MCP 首批能力应止于哪里](07-opensees-capability-scope.md#answer) 验收参照的事实，不替人选择支持范围。
