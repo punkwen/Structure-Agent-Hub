@@ -9,6 +9,7 @@ Labels: wayfinder:map
 ## Notes
 
 planning only；本轮不写 SPEC 正文或执行源码搬迁；用户列出五个工程，口述四个已按列名五个核实。必须读取 wayfinder；处理 grilling 票读取 grilling/domain-modeling；涉及接口/目录读取 codebase-design；research 票读取 research。tracker：[Issue tracker: Local Markdown](../../docs/agents/issue-tracker.md)。不将未回答建议写为共识。
+范围例外：允许在授权与集成路径的阻塞票解决后，进行选定 OpenSees 运行时的最小兼容性核验，仅为后续决策提供证据；不开发 MCP/Skill、不迁移工程、不部署客户端。本轮建图不执行该核验。
 
 ## Decisions so far
 
