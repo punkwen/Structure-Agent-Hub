@@ -1,0 +1,40 @@
+ERROR ndm msut be 1, 2 or 3
+Traceback (most recent call last):
+  File "F:\TigerkinProgram\Structure-Agent-Hub\.scratch\structure-agent-hub-spec\issues\09-runtime-evidence\probe_error_token.py", line 10, in case
+    print(f"RET {label} {fn()!r}", flush=True)
+                         ^^^^
+  File "F:\TigerkinProgram\Structure-Agent-Hub\.scratch\structure-agent-hub-spec\issues\09-runtime-evidence\probe_error_token.py", line 19, in bad_model_ndm
+    return ops.model("basic", "-ndm", 9, "-ndf", 2)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+opensees.OpenSeesError: See stderr output
+insufficient number of arguments
+Traceback (most recent call last):
+  File "F:\TigerkinProgram\Structure-Agent-Hub\.scratch\structure-agent-hub-spec\issues\09-runtime-evidence\probe_error_token.py", line 10, in case
+    print(f"RET {label} {fn()!r}", flush=True)
+                         ^^^^
+  File "F:\TigerkinProgram\Structure-Agent-Hub\.scratch\structure-agent-hub-spec\issues\09-runtime-evidence\probe_error_token.py", line 25, in bad_node_coords
+    return ops.node(1, 0.0)
+           ^^^^^^^^^^^^^^^^
+opensees.OpenSeesError: See stderr output
+WARNING: recorder Node -node <list nodes> -dof <doflist> -file <fileName> -dT <dT> responseWARNING failed to create recorder
+Traceback (most recent call last):
+  File "F:\TigerkinProgram\Structure-Agent-Hub\.scratch\structure-agent-hub-spec\issues\09-runtime-evidence\probe_error_token.py", line 10, in case
+    print(f"RET {label} {fn()!r}", flush=True)
+                         ^^^^
+  File "F:\TigerkinProgram\Structure-Agent-Hub\.scratch\structure-agent-hub-spec\issues\09-runtime-evidence\probe_error_token.py", line 32, in bad_recorder
+    return ops.recorder("Node", "-file", "x.out", "-node", 1)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+opensees.OpenSeesError: See stderr output
+WARNING unknown analysis type NoSuchAnalysis
+WARNING unknown integrator type NoSuchIntegrator
+UniaxialMaterial *getUniaxialMaterial(int tag) - none found with tag: 99
+WARNING: Invalid material not found element Truss 1 $iNode $jNode $A 99 <-rho $rho> <-cMass $flag> <-doRayleigh $flag>
+Invalid Args want: element TrussSection $tag $iNode $jNode $sectTag <-rho $rho> <-cMass $flag> <-doRayleigh $flag>
+Traceback (most recent call last):
+  File "F:\TigerkinProgram\Structure-Agent-Hub\.scratch\structure-agent-hub-spec\issues\09-runtime-evidence\probe_error_token.py", line 10, in case
+    print(f"RET {label} {fn()!r}", flush=True)
+                         ^^^^
+  File "F:\TigerkinProgram\Structure-Agent-Hub\.scratch\structure-agent-hub-spec\issues\09-runtime-evidence\probe_error_token.py", line 52, in missing_element_material
+    return ops.element("Truss", 1, 1, 2, 1.0, 99)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+opensees.OpenSeesError: See stderr output

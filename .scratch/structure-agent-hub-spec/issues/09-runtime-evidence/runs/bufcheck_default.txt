@@ -1,0 +1,1 @@
+line_buffering False write_through False isatty False encoding utf-8

@@ -1,0 +1,18 @@
+PY-BEFORE bad_model_ndm
+RAISED bad_model_ndm OpenSeesError: See stderr output
+PY-AFTER bad_model_ndm
+PY-BEFORE bad_node_coords
+RAISED bad_node_coords OpenSeesError: See stderr output
+PY-AFTER bad_node_coords
+PY-BEFORE bad_recorder
+RAISED bad_recorder OpenSeesError: See stderr output
+PY-AFTER bad_recorder
+PY-BEFORE bad_analysis_type
+RET bad_analysis_type None
+PY-AFTER bad_analysis_type
+PY-BEFORE bad_integrator
+RET bad_integrator None
+PY-AFTER bad_integrator
+PY-BEFORE missing_element_material
+RAISED missing_element_material OpenSeesError: See stderr output
+PY-AFTER missing_element_material

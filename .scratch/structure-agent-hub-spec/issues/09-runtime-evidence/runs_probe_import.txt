@@ -1,0 +1,12 @@
+PYEXE C:\Users\Administrator\AppData\Local\Programs\Python\Python312\python.exe
+PYVER 3.12.9 (tags/v3.12.9:fdb8142, Feb  4 2025, 15:27:58) [MSC v.1942 64 bit (AMD64)]
+PLATFORM Windows-10-10.0.19045-SP0
+openseespy version= 3.8.0.0 requires_python= >=3.10
+openseespy requires= ['openseespylinux>=3.8.0.0; platform_system == "Linux"', 'openseespywin>=3.8.0.0; platform_system == "Windows"', 'openseespymac>=3.8.0.0; platform_system == "Darwin"']
+openseespywin version= 3.8.0.0 requires_python= >=3.12
+openseespywin requires= None
+OPENSEESPY_FILE C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\openseespy\__init__.py
+OPS_MODULE_FILE C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\openseespy\opensees\__init__.py
+OPS_VERSION_CALL_BEGIN
+OPS_VERSION "3.8.0"
+OPS_VERSION_CALL_END

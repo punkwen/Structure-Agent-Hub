@@ -1,0 +1,6 @@
+WARNING FullGenLinLapackSolver::solve() -factorization failed, matrix singular U(i,i) = 0, i= 1
+WARNING Linear::solveCurrentStep() -the LinearSOE failed in solve()
+StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 1
+OpenSees > analyze failed, returned: -3 error flag
+PY-BEFORE-ANALYZE
+PY-AFTER-ANALYZE -3

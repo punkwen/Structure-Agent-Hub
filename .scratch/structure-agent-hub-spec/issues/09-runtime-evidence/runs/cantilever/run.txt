@@ -1,0 +1,5 @@
+cwd F:\TigerkinProgram\Structure-Agent-Hub\.scratch\structure-agent-hub-spec\issues\09-runtime-evidence\runs\cantilever
+analyze_rc 0
+node2_disp2 -9.999999999999996e-05
+expected -9.999999999999998e-05 tol 1e-09
+ANALYTIC_CHECK_OK

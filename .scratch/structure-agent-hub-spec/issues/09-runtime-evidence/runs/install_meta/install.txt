@@ -1,0 +1,8 @@
+{"name": "openseespy", "version": "3.8.0.0", "requires_python": ">=3.10", "requires_dist": ["openseespylinux>=3.8.0.0; platform_system == \"Linux\"", "openseespywin>=3.8.0.0; platform_system == \"Windows\"", "openseespymac>=3.8.0.0; platform_system == \"Darwin\""]}
+WHEEL openseespy: Wheel-Version: 1.0 | Generator: setuptools (82.0.1) | Root-Is-Purelib: true | Tag: py3-none-any |  |
+{"name": "openseespywin", "version": "3.8.0.0", "requires_python": ">=3.12", "requires_dist": null}
+WHEEL openseespywin: Wheel-Version: 1.0 | Generator: setuptools (82.0.1) | Root-Is-Purelib: true | Tag: py3-none-win_amd64 |  |
+opensees.pyd size=17206272 sha256=25ba42e1672526137d765d9c3631d1403e091f54f5afcdb9242f9243c63c3a96
+RECORD pyd line: openseespywin/opensees.pyd,sha256=JbpC4WclJhN9dl2cNjHRQD4JH1T1r825JC-SQ8Y8OpY,17206272
+downloaded openseespy-3.8.0.0-py3-none-any.whl size=2792 sha256=ce6a43503b737025f763a87bebacb1cc2fbd82a156982647e9e014a11b85fdbd
+downloaded openseespywin-3.8.0.0-py3-none-win_amd64.whl size=6787016 sha256=ee0f48317582641cf06347fe0babd34a230823b56397603c9b5b2d3b96089b73

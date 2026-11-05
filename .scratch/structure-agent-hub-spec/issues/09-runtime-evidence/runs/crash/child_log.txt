@@ -1,0 +1,5 @@
+WARNING unknown integrator type NoSuchIntegrator
+WARNING analysis Static - no Integrator specified, 
+ StaticIntegrator default will be used
+before analyze
+ ** On entry to DGBSV  parameter number  9 had an illegal value

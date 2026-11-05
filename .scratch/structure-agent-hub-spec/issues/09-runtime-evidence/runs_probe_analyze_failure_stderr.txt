@@ -1,0 +1,15 @@
+WARNING No Analysis type has been specified 
+Traceback (most recent call last):
+  File "F:\TigerkinProgram\Structure-Agent-Hub\.scratch\structure-agent-hub-spec\issues\09-runtime-evidence\probe_analyze_failure.py", line 15, in show
+    value = fn()
+            ^^^^
+  File "F:\TigerkinProgram\Structure-Agent-Hub\.scratch\structure-agent-hub-spec\issues\09-runtime-evidence\probe_analyze_failure.py", line 28, in no_analysis_defined
+    return ops.analyze(1)
+           ^^^^^^^^^^^^^^
+opensees.OpenSeesError: See stderr output
+WARNING FullGenLinLapackSolver::solve() -factorization failed, matrix singular U(i,i) = 0, i= 1
+WARNING Linear::solveCurrentStep() -the LinearSOE failed in solve()
+StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 1
+OpenSees > analyze failed, returned: -3 error flag
+WARNING DisplacementControl::domainChanged() - zero reference loadStaticAnalysis::setAlgorithm() - Integrator::domainChanged() failedStaticAnalysis::analyze() - domainChanged failed at step 0 of 1
+OpenSees > analyze failed, returned: -1 error flag

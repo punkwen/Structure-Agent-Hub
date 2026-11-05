@@ -1,0 +1,41 @@
+Domain::addNodalLoad() - no node with tag 99 exists in the model, not adding the nodal load Nodal Load: 99 load : 1 0 
+
+WARNING: failed to add nodal load to domain
+Traceback (most recent call last):
+  File "F:\TigerkinProgram\Structure-Agent-Hub\.scratch\structure-agent-hub-spec\issues\09-runtime-evidence\probe_error_lines.py", line 14, in case
+    print(f"RET {label} {fn()!r}", flush=True)
+                         ^^^^
+  File "F:\TigerkinProgram\Structure-Agent-Hub\.scratch\structure-agent-hub-spec\issues\09-runtime-evidence\probe_error_lines.py", line 28, in bad_node_tag
+    return ops.load(99, 1.0, 0.0)
+           ^^^^^^^^^^^^^^^^^^^^^^
+opensees.OpenSeesError: See stderr output
+ndm must be 2 and ndf must be 3
+Traceback (most recent call last):
+  File "F:\TigerkinProgram\Structure-Agent-Hub\.scratch\structure-agent-hub-spec\issues\09-runtime-evidence\probe_error_lines.py", line 14, in case
+    print(f"RET {label} {fn()!r}", flush=True)
+                         ^^^^
+  File "F:\TigerkinProgram\Structure-Agent-Hub\.scratch\structure-agent-hub-spec\issues\09-runtime-evidence\probe_error_lines.py", line 38, in bad_element
+    return ops.element("elasticBeamColumn", 1, 1, 2, 0.0, 1.0)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+opensees.OpenSeesError: See stderr output
+WARNING material type NoSuchMaterial is unknown
+Traceback (most recent call last):
+  File "F:\TigerkinProgram\Structure-Agent-Hub\.scratch\structure-agent-hub-spec\issues\09-runtime-evidence\probe_error_lines.py", line 14, in case
+    print(f"RET {label} {fn()!r}", flush=True)
+                         ^^^^
+  File "F:\TigerkinProgram\Structure-Agent-Hub\.scratch\structure-agent-hub-spec\issues\09-runtime-evidence\probe_error_lines.py", line 43, in bad_material
+    return ops.uniaxialMaterial("NoSuchMaterial", 1)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+opensees.OpenSeesError: See stderr output
+Domain::addNode - node with tag 1 already exists in model
+WARNING: failed to add node to domain
+Traceback (most recent call last):
+  File "F:\TigerkinProgram\Structure-Agent-Hub\.scratch\structure-agent-hub-spec\issues\09-runtime-evidence\probe_error_lines.py", line 14, in case
+    print(f"RET {label} {fn()!r}", flush=True)
+                         ^^^^
+  File "F:\TigerkinProgram\Structure-Agent-Hub\.scratch\structure-agent-hub-spec\issues\09-runtime-evidence\probe_error_lines.py", line 50, in duplicate_node
+    return ops.node(1, 1.0, 0.0)
+           ^^^^^^^^^^^^^^^^^^^^^
+opensees.OpenSeesError: See stderr output
+WARNING DisplacementControl::domainChanged() - zero reference loadStaticAnalysis::setAlgorithm() - Integrator::domainChanged() failedStaticAnalysis::analyze() - domainChanged failed at step 0 of 1
+OpenSees > analyze failed, returned: -1 error flag

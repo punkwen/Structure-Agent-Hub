@@ -1,0 +1,3 @@
+WARNING unknown integrator type NoSuchIntegrator
+WARNING analysis Static - no Integrator specified, 
+ StaticIntegrator default will be used

@@ -1,0 +1,9 @@
+=== CASE norm_unbalance_fail BEGIN
+WARNING DisplacementControl::domainChanged() - zero reference loadStaticAnalysis::setAlgorithm() - Integrator::domainChanged() failedStaticAnalysis::analyze() - domainChanged failed at step 0 of 5
+OpenSees > analyze failed, returned: -1 error flag
+RESULT norm_unbalance_fail returned -1
+=== CASE norm_unbalance_fail END
+=== CASE unconstrained_dof BEGIN
+WARNING FullGenLinLapackSolver::solve() -factorization failed, matrix singular U(i,i) = 0, i= 0
+RESULT unconstrained_dof returned 0
+=== CASE unconstrained_dof END
