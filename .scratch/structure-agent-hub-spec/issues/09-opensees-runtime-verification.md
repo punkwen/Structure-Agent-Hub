@@ -14,7 +14,7 @@ Parent: ../map.md
 
 核验目标（单一目标环境：本机 Windows x64 + 已装 CPython 3.12.9）：
 
-1. 记录实际解释器版本与路径；`openseespy` 的安装来源、版本与 `import openseespy.opensees` 是否成功，错误原样记录。
+1. 记录实际解释器版本与路径；`openseespy` 的安装来源、精确版本、实际 wheel 文件名与平台 tag（如 `win_amd64`）、元数据 `requires_python` 与该解释器是否匹配，以及 `import openseespy.opensees` 是否成功；错误原样记录。
 2. 跑一个最小模型（如悬臂或门式刚架）并读取一次输出，记录输入、输出与错误证据；对照 [OpenSees 有哪些可用的集成路径与运行约束](04-opensees-integration-evidence.md) 所述版本/Python 兼容性冲突，裁定其在该环境是否成立。
 3. 核实 [OpenSees MCP 首批能力应止于哪里](07-opensees-capability-scope.md#answer) 标为推断的运行时行为：`ops.analyze()` 失败时的返回与日志表现、OpenSees `Error`/`WARNING` 行能否从合并日志可靠识别、recorder 相对路径是否落在进程 CWD。
 

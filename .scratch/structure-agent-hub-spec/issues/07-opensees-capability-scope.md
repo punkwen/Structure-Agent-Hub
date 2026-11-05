@@ -80,7 +80,7 @@ Parent: ../map.md
 ### 9. 与其他票的关系
 
 - 新开 [OpenSees MCP 的仓库起源与首发基线如何确定](15-opensees-mcp-repository-origin.md)；[五个现有 MCP 的迁移基线与历史如何保留](10-migration-baseline.md) 的票面限定五个现有 MCP，不能容纳新仓库。
-- [核验选定 OpenSees 运行路径的版本兼容性](09-opensees-runtime-verification.md) 的核验对象据此变为「Python 解释器 + `openseespy` 可导入性 + 本票列出的运行时未知项」，不再是 exe/wheel/tag 的版本映射。
+- [核验选定 OpenSees 运行路径的版本兼容性](09-opensees-runtime-verification.md) 的核验对象据此变为「精确 `openseespy` wheel 版本 + 平台 tag + 解释器版本 + import 与一次最小实际调用 + 本票列出的运行时未知项」；CLI 的 `OpenSees.exe` 版本不再相关，但 04 的版本/兼容冲突对 wheel 同样成立。
 - [一键部署应承诺什么行为与验收结果](08-deployment-contract.md) 依赖本票的能力与前置边界。
 
 ### 10. 未决定 / 未验证
