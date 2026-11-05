@@ -15,7 +15,7 @@
 
 - 地图正文使用 `Destination`、`Notes`、`Decisions so far`、`Not yet specified`、`Out of scope` 五个段落。
 - 地图只索引已经关闭的票，不列开放票。子票以 `Parent: ../map.md` 归属地图。
-- 子票元数据为 `Type:`、`Labels:`、`Status:`、`Assignee:`、`Blocked by:`。开放且未领取时使用 `Status: open`、`Assignee: unassigned`；无阻塞使用 `Blocked by: none`。
+- 子票元数据为 `Type:`、`Labels:`、`Mode:`、`Status:`、`Assignee:`、`Blocked by:`。`Mode: HITL` 表示须与人共同解决，`Mode: AFK` 表示可由代理独立处理；开放且未领取时使用 `Status: open`、`Assignee: unassigned`；无阻塞使用 `Blocked by: none`。
 - 决策问题放在 `## Question`；调查材料和原型只放链接，不将答案预写进问题正文。
 
 ### Blocking and frontier
