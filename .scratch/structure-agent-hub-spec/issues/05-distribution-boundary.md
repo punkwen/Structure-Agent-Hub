@@ -3,13 +3,84 @@
 Type: grilling
 Labels: wayfinder:grilling
 Mode: HITL
-Status: open
-Assignee: unassigned
+Status: resolved
+Assignee: punkwen
 Blocked by: 02,04
 Parent: ../map.md
 
 ## Question
 
 基于授权证据和运行前置条件，Hub 将拥有/引用/发布哪些源码与产物，商业 DLL、软件、许可、密钥如何处理？哪些必须由用户本机提供？每个纳入物的合法来源与授权标识如何确认？由人确认权属和分发边界，不把缺授权当许可。
-
 参考票：[参考 Hub 与五个现有 MCP 带来哪些复用和迁移约束](02-reuse-migration-evidence.md)、[OpenSees 有哪些可用的集成路径与运行约束](04-opensees-integration-evidence.md)。
+
+## Answer
+
+用户于 2026-11-06 逐项确认以下分发边界（HITL 结论）。这是规划决定，不构成法律意见；未执行迁移、打包、发布、MCP/Skill 开发或部署。
+
+### 1. 第一方源码、Skill 与文档
+
+- 面向公开发布；五个现有 MCP 工程（MIDAS、Rhino、SAP2000、YJK、ETABS）中，经用户确认有权授权的第一方源码、Skill 与文档可在逐项审查后纳入。
+- 用户确认对自己拥有的第一方内容具备公开许可的权利；已确认的第一方内容拟采用 `GPL-3.0-only`。
+- 上述第一方权属确认不涵盖厂商文件、复制来的第三方材料或未获授权的贡献。
+- 事实区分：2026-11-05 证据显示五个仓库均无 LICENSE/COPYING 文本（见 [参考 Hub 与五个现有 MCP 带来哪些复用和迁移约束](02-reuse-migration-evidence.md)）。因此 `GPL-3.0-only` 是用户当前的明确授权与拟采用许可，不是既有许可声明；不得表述为这些仓库已重新授权、已迁移或已逐文件审计。实际纳入范围与各仓源码版本在逐项审查后另行记录。
+
+### 2. 参考项目 Cai-aa/CAE-Agent-Hub
+
+- 首版仅作设计参考，不复制其内容。
+- 未来若决定复制个别内容，须逐件记录可追溯的原始来源、许可、权利、义务，以及相关时的兼容性；其根目录 MIT 不构成对所有组件的授权。
+
+### 3. OpenSees 与 OpenSeesPy
+
+- OpenSees 或 OpenSeesPy 是相应适配器的外部前置条件；其源码、可执行程序、wheel 等先不纳入、不镜像、不再分发。
+- 用户从合法渠道自行获取，并受其自身许可约束。
+- 官方许可文本相互冲突，商用或服务化使用可能需要单独审查（见 [OpenSees 有哪些可用的集成路径与运行约束](04-opensees-integration-evidence.md)）；这不构成“永不可再分发”的法律结论。
+- 只有在对具体产物完成法律与兼容性审查并另作决定后，才重新考虑纳入。
+
+### 4. 厂商软件、专有 SDK/DLL 与 YJK 数据文件
+
+首版中由用户按各适配器需要在本机提供，不在仓库、发行物或可访问的 Git 历史中。明列：`RhinoCommon.dll`、`SAP2000v1.dll`、`ETABSv1.dll`、YJK SDK 目录、`YJK_SSCS.YDB`。
+
+- MIDAS：需用户自备 HTTP/MAPI 服务与 MAPI-Key。
+- Rhino：需 Rhino 本体及其适用的 API/SDK。
+- SAP2000、ETABS：需各自的应用/COM API 与 DLL。
+- YJK：需其 SDK；不声称必须启动 YJK 应用。
+- 版本与确切部署方式留待后续票。
+- 即便某些厂商资产可能存在较宽松的许可证据，用户已选择首版不打包；不得据此断言这些资产必然不可分发。未来变更需授权审查并单独选择。
+
+### 5. 秘密与凭据
+
+- 永不发布 API key、token、激活码或用户专属 entitlement/许可文件；覆盖示例、日志、产物与 Git 历史。
+- 用户本地提供必要凭据；本票不决定凭据存储机制或部署设计。
+- 与此相反，第三方许可文本与版权声明属于必须按要求保留的内容，不得当作秘密删除。
+
+### 6. 第一方构建产物
+
+EXE、DLL、Rhino 插件等第一方构建产物可公开发布，前提是完成整件审查、相关第三方与 copyleft/notice/source 义务合规；不得静默打包厂商文件或秘密。
+
+### 7. 开源第三方依赖
+
+NuGet 及其他开源第三方依赖（含传递依赖）可在逐包逐版本审查来源、再分发权、许可义务与适用兼容性后分发。本政策不自动批准任何包。
+
+### 8. 可追溯记录
+
+每个分发资产，或显式限定的共同权属/许可组，须有一份记录，至少包含：确切来源与版本（提交或快照哈希）、权利方、SPDX 标识或明确识别的非标准条款、许可证据及其覆盖范围、义务、人工审查者与审查结论。
+
+- 项目所有者声明只适用于已确认的第一方材料；第三方主张须另行取证。
+- 未知权利/许可须明确标注（如 `NOASSERTION`），不得当作许可，并排除在发行物之外。
+- 私有合同证据可被引用，但不得暴露秘密或受保护文件。
+- 审查范围包含传递资产、内嵌依赖、产物与 Git 历史。
+- 仅凭 SPDX 标识或许可文本不构成任何法律结论。
+
+### 9. 已知须单独做来源/权利审查的指示项
+
+- `tgk-yjk-modeling-mcp/src/Tgk.Yjk.Modeling.Core/Validation/FoundationSpecValidator.cs:17-18` 注释称参数数量系通过反编译 `YJKAPI.dll` 获得。
+- `tgk-yjk-modeling-mcp/.trae/skills/yjk-modeling-foundation-api/docs/基础建模接口说明.md` 指向厂商材料。
+- 2026-11-05 证据显示 YJK 与 SAP2000 工作区存在未提交的修改/删除。
+
+以上是需下游审查者注意的来源与权利指示项，不是违法或确属复制代码的结论；本票不复制其内容。
+
+### 10. 不在本票范围
+
+迁移方式、原始 Git 历史取舍、快照选择与脏改动处理仍由 [仓库如何组织，Skill 与 MCP 如何分工](06-repository-skill-boundary.md) 与 [五个现有 MCP 的迁移基线与历史如何保留](10-migration-baseline.md) 决定；本票不决定也不清理这些工作区状态。
+
+证据基础：上述两研究票及其固定提交（reuse-migration `2fd0270f65121016e0935dcca633ad06d88a0d0e`、opensees `6edf74aa9dc6fcc55fc9b70a84cba5bfffa1345e`）。实际纳入的源码版本尚未选定；运行能力尚未验证。

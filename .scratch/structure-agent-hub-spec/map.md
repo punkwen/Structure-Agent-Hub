@@ -16,6 +16,7 @@ planning only；本轮不写 SPEC 正文或执行源码搬迁；用户列出五�
 - [OpenSees 有哪些可用的集成路径与运行约束](issues/04-opensees-integration-evidence.md#answer): 第一方资料证实 Tcl/CLI 与 OpenSeesPy 两条入口，但版本映射与授权措辞冲突，仅有文档证据。
 - [三类 Agent 实际支持哪些 Skill 与 MCP 接入方式](issues/03-agent-integration-evidence.md#answer): pi 已核实为 earendil-works/pi 且当前版本内置 MCP 与原生 Skills；OpenCode v1/v2 配置形态不兼容，整体部署幂等与卸载尚未获第一方证据证明。
 - [参考 Hub 与五个现有 MCP 带来哪些复用和迁移约束](issues/02-reuse-migration-evidence.md#answer): 五仓运行时/桥接与已有 Skill、客户端配置形状各异，均缺许可文本，YJK/SAP2000 工作区存在未提交状态。
+- [哪些源码、依赖与产物可以纳入和分发](issues/05-distribution-boundary.md#answer): 经核验的第一方内容拟按 GPL-3.0-only 发布；厂商依赖及 OpenSees 按需自备、凭据不发布，第三方依赖与产物须逐项审查。
 
 ## Not yet specified
 
