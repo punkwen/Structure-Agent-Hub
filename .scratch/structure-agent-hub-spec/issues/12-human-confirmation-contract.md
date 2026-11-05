@@ -3,8 +3,8 @@
 Type: grilling
 Labels: wayfinder:grilling
 Mode: HITL
-Status: open
-Assignee: unassigned
+Status: claimed
+Assignee: punkwen
 Blocked by: 01,06,11
 Parent: ../map.md
 
