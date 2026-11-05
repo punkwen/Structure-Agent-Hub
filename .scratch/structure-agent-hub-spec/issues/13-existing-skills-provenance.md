@@ -28,7 +28,7 @@ Parent: ../map.md
 
 ## Answer
 
-已按 [research 证据稿](https://github.com/punkwen/Structure-Agent-Hub/blob/6811f36d9d47c3df805a845125b43ce45c21f81a/.scratch/structure-agent-hub-spec/research/skills-provenance.md) 取证（2026-11-06，本机只读静态审计，版本锚点 `c244fda622650715c8269784535e256a74b54a8b`）。全部为事实证据与 `NOASSERTION` 标记，不含权属声明或法律判断；未修改 tigerkin-skills 任何文件。
+已按 [research 证据稿](https://github.com/punkwen/Structure-Agent-Hub/blob/408dc8e70a4d4515f527cdbe1fbe67453f6ef8c5/.scratch/structure-agent-hub-spec/research/skills-provenance.md) 取证（2026-11-06，本机只读静态审计，版本锚点 `c244fda622650715c8269784535e256a74b54a8b`）。全部为事实证据与 `NOASSERTION` 标记，不含权属声明或法律判断；未修改 tigerkin-skills 任何文件。
 
 ### 1. 两份副本：以 `skills/structure-software-dev/` 为准
 
@@ -36,7 +36,7 @@ Parent: ../map.md
 
 ### 2. 候选清单与相关性（12 项全部登记，详见证据稿 §4）
 
-高相关：`opensees-tcl-expert`（536 文件）、`sap2000-api`（1,818）、`etabs-api-function`（133）、`yjk-modeling-api`（22）、`yjk-modeling-foundation-api`（6）、`yjk-runtime-api-function`（10）、`yjk-runtime-api-post-function`（5）。中相关：`yjk-dsnmodel`、`dtl-model`。条件相关：`sap2000-s2k-expert`（36 个含 `LicenseNum=` 的真实 s2k 样例）、`midas-api`（自编成分最高）。低/存疑：`3d3s-expert`（3D3S 不在五个 MCP 之列）。「相关」不是「可索引」。
+高相关：`opensees-tcl-expert`（536 文件）、`sap2000-api`（1,818）、`etabs-api-function`（133）、`yjk-modeling-api`（22）、`yjk-modeling-foundation-api`（6）、`yjk-runtime-api-function`（10）、`yjk-runtime-api-post-function`（5）。中相关：`yjk-dsnmodel`、`dtl-model`。条件相关：`sap2000-s2k-expert`（36 个真实 s2k 样例，其中 26 个含 `LicenseNum=`）、`midas-api`（未检出第三方文本复制证据，但自撰程度未证实）。低/存疑：`3d3s-expert`（3D3S 不在五个 MCP 之列）。「相关」不是「可索引」。
 
 ### 3. 权利与许可：当前无一满足公开引用条件
 
@@ -44,9 +44,9 @@ Parent: ../map.md
 
 ### 4. 依赖与历史
 
-- MCP 依赖声明：0 处（检索命中均为假阳性）；frontmatter 只有 `name`/`description`。票 06 §4 要求的 MCP 依赖声明尚不存在。
-- 文本声明的软件前提（静态阅读，未验证）：CSI/SAP2000/ETABS OAPI、YJK DLL 系列、MIDAS `localhost:10084` 服务。
-- 历史（18 提交，仅 master）：无厂商二进制；含 MIT 的 mattpocock-skills 中文包（zip+目录，108 文件一致）、两个含中文结构工程书籍/规范文章的 `reference_bundle.zip`（`NOASSERTION`）、s2k 许可证号、`.omc` 个人数据缓存（用户名/本机路径）——均登记位置，不复制内容。
+- MCP 依赖声明：0 处（检索命中均为假阳性）；frontmatter 只有 `name`/`description`。[仓库如何组织，Skill 与 MCP 如何分工](06-repository-skill-boundary.md#answer) §4 要求的 MCP 依赖声明尚不存在。
+- 文本声明的软件前提（静态阅读，未验证）：SAP2000 OAPI、ETABS v22+/.NET Standard 2.0 的 `ETABSv1.dll`、YJK DLL 系列（建模/基础/运行时/后处理各自不同）、MIDAS `localhost:10084` 服务。
+- 历史（18 提交，仅 master）：无厂商二进制；含 MIT 的 mattpocock-skills 中文包（zip+目录，108 文件一致）、两个含中文结构工程书籍/规范文章的 `reference_bundle.zip`（`NOASSERTION`）、s2k 许可证号、`.omc` 个人数据缓存（仅登记位置，不复制内容）。历史审计按文件名与已知名单抽查，未穷尽扫描全部历史 blob 内容。
 - Gitee 远端公开可见性**未能核实**（匿名 403/API 404），公开链接条件未知。
 
 ### 5. 明确不声称
@@ -54,5 +54,9 @@ Parent: ../map.md
 本票不构成公开再分发许可，不声称 `GPL-3.0-only` 覆盖该仓库或其材料（[哪些源码、依赖与产物可以纳入和分发](05-distribution-boundary.md#answer) 的第一方确认只覆盖五个 MCP），不声称任何技术能力或客户端兼容性。范围确认属[哪些现有结构专业 Skill 可以纳入 Hub 索引](14-existing-skills-index-scope.md)。
 
 Research branch: research/hub-spec-skills-provenance-20261106
-Commit: 6811f36d9d47c3df805a845125b43ce45c21f81a
+Commit: 408dc8e70a4d4515f527cdbe1fbe67453f6ef8c5
 Date: 2026-11-06
+
+## Comments
+
+- 2026-11-06：本票的 research 提交（`9083d4b`、`6811f36`）因并发会话在同一工作副本切换分支而一度进入 `main` 历史；研究文件已从 `main` 工作树移除（`bc88ac4`），但这两个提交仍是 `main` 的祖先。按 tracker「研究分支不合并」的约定，这属于历史卫生偏差；未重写已公开的 `main`（避免与并发会话冲突），在此登记。研究文件本身只存在于 `research/hub-spec-skills-provenance-20261106`（tip `408dc8e`）。
