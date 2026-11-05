@@ -18,6 +18,8 @@ planning only；本轮不写 SPEC 正文或执行源码搬迁；用户列出五�
 - [参考 Hub 与五个现有 MCP 带来哪些复用和迁移约束](issues/02-reuse-migration-evidence.md#answer): 五仓运行时/桥接与已有 Skill、客户端配置形状各异，均缺许可文本，YJK/SAP2000 工作区存在未提交状态。
 - [哪些源码、依赖与产物可以纳入和分发](issues/05-distribution-boundary.md#answer): 经核验的第一方内容拟按 GPL-3.0-only 发布；厂商依赖及 OpenSees 按需自备、凭据不发布，第三方依赖与产物须逐项审查。
 - [首批结构工程场景与 Hub 成功标准是什么](issues/01-first-workflows.md#answer): 结构工程师优先，五个现有 MCP 各有代表实例，受控操作并以五例全部实测通过作为核心可用标准。
+- [仓库如何组织，Skill 与 MCP 如何分工](issues/06-repository-skill-boundary.md#answer): 五个 MCP 独立、Hub 索引；Skill 按工作流与来源分归属，确认保障和现有 Skill 审查另行跟踪。
+- [OpenSees MCP 首批能力应止于哪里](issues/07-opensees-capability-scope.md#answer): 首批只走 OpenSeesPy 跑用户 Python 脚本；runner 发完成 marker；不解析结果、不并发、不装运行时；不计入五例核心门槛，仓库起源另票。
 
 ## Not yet specified
 
