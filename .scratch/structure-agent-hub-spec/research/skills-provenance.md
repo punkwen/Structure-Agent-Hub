@@ -44,7 +44,7 @@
 
 | Skill | 树哈希 (`HEAD:skills/structure-software-dev/<n>`) | 文件数 | 相关性 | 依据与未知项 |
 |---|---|---|---|---|
-| `opensees-tcl-expert` | `cf86185368f2fb8a62bd33993905c42dc969f8c0` | 536 | **相关（高）** | OpenSees Tcl 脚本生成/修改 + OpenSeesPy 命令文档集；与[OpenSees MCP 首批能力应止于哪里](../issues/07-opensees-capability-scope.md#answer)的 OpenSeesPy 路径直接相关。但其能力形态（产出 Tcl 脚本）与 07 票「候选 opensees-tcl-expert 因产出 Tcl 不配套」的既定结论冲突，能否纳入属 14 票决策。第三方材料占比高（见 §6）。 |
+| `opensees-tcl-expert` | `cf86185368f2fb8a62bd33993905c42dc969f8c0` | 536 | **相关（高）** | OpenSees Tcl 脚本生成/修改 + OpenSeesPy 命令文档集；与[OpenSees MCP 首批能力应止于哪里](../issues/07-opensees-capability-scope.md#answer)的 OpenSeesPy 路径直接相关。但其能力形态（产出 Tcl 脚本）与该票「候选 opensees-tcl-expert 因产出 Tcl 不配套」的既定结论冲突，能否纳入属[哪些现有结构专业 Skill 可以纳入 Hub 索引](../issues/14-existing-skills-index-scope.md)决策。第三方材料占比高（见 §6）。 |
 | `sap2000-api` | `656e09b5b79e6f86be433e68f23652cf0e15ddc5` | 1,818 | **相关（高）** | SAP2000 OAPI 函数参考（`docs/**` 1,817 个 md）；与 SAP2000 MCP 同软件域。全部 doc 文件无任何版权/许可文本（见 §6），来源未能从内容本身确认。 |
 | `etabs-api-function` | `3afd2e33d56d46a50750d3535d249e90386f4820` | 133 | **相关（高）** | ETABS v1 OAPI 参考（126 接口/2,652 方法）+ CSI 版权声明 128 处；与 ETABS MCP 同软件域。 |
 | `yjk-modeling-api` | `632237cb6debb95ff87c8699c7c0aeac65955c70` | 22 | **相关（高）** | YJK DataFunc/CsToYjk 建模 API + 18 个 C# 示例；与 YJK MCP 同软件域。文档疑似厂商材料（见 §6）。 |
@@ -54,16 +54,16 @@
 | `yjk-dsnmodel` | `e386743216efc9f8cd967b5dfd038a1de974ef87` | 2 | **相关（中）** | dsnModel.ydb 318+ 表参考；reference 文件含 259 处 `media/` 图片引用但仓库内无 `media/` 目录（引用全部悬空），存在 pandoc 转换痕迹（8,834 处 `{width=…}`）。 |
 | `dtl-model` | `f42b04d01426dab2c93d55dfac7fe3c13c71e8b2` | 2 | **相关（中）** | dtlModel（dtlmodel.ydb）表结构参考；与 yjk-dsnmodel 同类。 |
 | `sap2000-s2k-expert` | `db032c04e5a281606ca38d3bf72382aa2e13a098` | 38 | **相关（条件）** | .s2k 文件格式手册 + 36 个真实 .s2k 示例模型；手册为自研分析成果，但示例文件含 SAP2000 许可证号与疑似真实工程数据（见 §6.4），纳入前须逐文件脱敏审查。 |
-| `midas-api` | `619293792ce5fdce088c2a1b7acbf009f4cb8966` | 2 | **相关（条件）** | MIDAS NX REST API 端点目录；SKILL.md 为自研编写，references 指向官方在线手册 URL。权利干净度较高，但与五个 MCP 中 MIDAS 的覆盖关系由 14 票判断。 |
+| `midas-api` | `619293792ce5fdce088c2a1b7acbf009f4cb8966` | 2 | **相关（条件）** | MIDAS NX REST API 端点目录；SKILL.md 写作质量指向自撰但未证实（见 §6.2），references 指向官方在线手册 URL。权利干净度较高，但与五个 MCP 中 MIDAS 的覆盖关系由[哪些现有结构专业 Skill 可以纳入 Hub 索引](../issues/14-existing-skills-index-scope.md)判断。 |
 | `3d3s-expert` | `f46f3117956f63e357fbb2c0547e8fac15191b1f` | 8 | **相关（低/存疑）** | 3D3S 文本交换格式关键字参考 + 6 个 .3d3s 样例模型。3D3S 不在五个 MCP 之列；样例含第三方导出标记（`Euler2025 SR10`、`Grida R2025`），来源未知。 |
 
-无关项（不属于本票候选，仅登记存在）：`skills/` 其余 5 类（lbt-dev 20 项 Ladybug/Honeybee、office 7、personal 5、program-dev 2、rhino-grasshopper-dev 5）及仓库根 `DIY/`、`General/`、`LBT/`、`Obsidian/`、`RhinoGHDev/`、`TigerkinClaw/`、`tigerkinforghmax/`、`mattpocock-skills-zh-CN-main/`。其中 `TigerkinClaw/`（6 个 YJK/AutoCAD 工作流 Skill）与 `Obsidian/llm-wiki-yjk-out-check`（YJK 输出审查）在主题上与结构专业相邻，但不在票面圈定的 `StructureDev` 口径内，本票不展开取证；若 14 票需要，应另行取证。
+无关项（不属于本票候选，仅登记存在）：`skills/` 其余 5 类（lbt-dev 20 项 Ladybug/Honeybee、office 7、personal 5、program-dev 2、rhino-grasshopper-dev 5）及仓库根 `DIY/`、`General/`、`LBT/`、`Obsidian/`、`RhinoGHDev/`、`TigerkinClaw/`、`tigerkinforghmax/`、`mattpocock-skills-zh-CN-main/`。其中 `TigerkinClaw/`（6 个 YJK/AutoCAD 工作流 Skill）与 `Obsidian/llm-wiki-yjk-out-check`（YJK 输出审查）在主题上与结构专业相邻，但不在票面圈定的 `StructureDev` 口径内，本票不展开取证；若[哪些现有结构专业 Skill 可以纳入 Hub 索引](../issues/14-existing-skills-index-scope.md)需要，应另行取证。
 
 ## 5. 来源与版本锚点
 
 - **单一版本锚点**：`skills/structure-software-dev/` @ `c244fda622650715c8269784535e256a74b54a8b`（2026-07-27）。各 Skill 树哈希见 §4 表。全部内容来自本机私有仓库；按票面要求不提供公开链接。
 - **作者与身份**：18 个提交的作者名有 3 种写法（`punkwen` 8 次、`q475832547` 9 次、`文志彬` 1 次），**邮箱全部为 `475832547@qq.com`**；与 Hub 仓库的提交身份相同。这是 git 元数据证据，不是权利声明。
-- **事实证据与授权声明的区分**：本节全部为 git/文件系统事实。任何"该仓库由我创建/我拥有其内容"的第一方权属主张属于用户声明，本票未收集此类声明；14 票确认权属时须将其与这里的 git 证据对账（作者一致 ≠ 著作权归属）。
+- **事实证据与授权声明的区分**：本节全部为 git/文件系统事实。任何"该仓库由我创建/我拥有其内容"的第一方权属主张属于用户声明，本票未收集此类声明；[哪些现有结构专业 Skill 可以纳入 Hub 索引](../issues/14-existing-skills-index-scope.md)确认权属时须将其与这里的 git 证据对账（作者一致 ≠ 著作权归属）。
 - **远程可访问性**：Gitee 远端匿名不可见（见文件头）；本地凭据可 fetch/push。公开引用条件的一部分（"公开链接是否可行"）因此**未知**，标 `NOASSERTION`。
 
 ## 6. 权利与许可
