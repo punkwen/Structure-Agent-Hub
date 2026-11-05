@@ -28,7 +28,7 @@ Parent: ../map.md
 
 ## Answer
 
-已按 [research 证据稿](https://github.com/punkwen/Structure-Agent-Hub/blob/408dc8e70a4d4515f527cdbe1fbe67453f6ef8c5/.scratch/structure-agent-hub-spec/research/skills-provenance.md) 取证（2026-11-06，本机只读静态审计，版本锚点 `c244fda622650715c8269784535e256a74b54a8b`）。全部为事实证据与 `NOASSERTION` 标记，不含权属声明或法律判断；未修改 tigerkin-skills 任何文件。
+已按 [research 证据稿](https://github.com/punkwen/Structure-Agent-Hub/blob/d307257705b2be8e39b0ebe911ee03a29ee89623/.scratch/structure-agent-hub-spec/research/skills-provenance.md) 取证（2026-11-06，本机只读静态审计，版本锚点 `c244fda622650715c8269784535e256a74b54a8b`）。全部为事实证据与 `NOASSERTION` 标记，不含权属声明或法律判断；未修改 tigerkin-skills 任何文件。
 
 ### 1. 两份副本：以 `skills/structure-software-dev/` 为准
 
@@ -54,7 +54,7 @@ Parent: ../map.md
 本票不构成公开再分发许可，不声称 `GPL-3.0-only` 覆盖该仓库或其材料（[哪些源码、依赖与产物可以纳入和分发](05-distribution-boundary.md#answer) 的第一方确认只覆盖五个 MCP），不声称任何技术能力或客户端兼容性。范围确认属[哪些现有结构专业 Skill 可以纳入 Hub 索引](14-existing-skills-index-scope.md)。
 
 Research branch: research/hub-spec-skills-provenance-20261106
-Commit: 408dc8e70a4d4515f527cdbe1fbe67453f6ef8c5
+Commit: d307257705b2be8e39b0ebe911ee03a29ee89623
 Date: 2026-11-06
 
 ## Comments
