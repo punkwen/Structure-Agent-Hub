@@ -17,10 +17,11 @@ planning only；本轮不写 SPEC 正文或执行源码搬迁；用户列出五�
 - [三类 Agent 实际支持哪些 Skill 与 MCP 接入方式](issues/03-agent-integration-evidence.md#answer): pi 已核实为 earendil-works/pi 且当前版本内置 MCP 与原生 Skills；OpenCode v1/v2 配置形态不兼容，整体部署幂等与卸载尚未获第一方证据证明。
 - [参考 Hub 与五个现有 MCP 带来哪些复用和迁移约束](issues/02-reuse-migration-evidence.md#answer): 五仓运行时/桥接与已有 Skill、客户端配置形状各异，均缺许可文本，YJK/SAP2000 工作区存在未提交状态。
 - [哪些源码、依赖与产物可以纳入和分发](issues/05-distribution-boundary.md#answer): 经核验的第一方内容拟按 GPL-3.0-only 发布；厂商依赖及 OpenSees 按需自备、凭据不发布，第三方依赖与产物须逐项审查。
+- [首批结构工程场景与 Hub 成功标准是什么](issues/01-first-workflows.md#answer): 结构工程师优先，五个现有 MCP 各有代表实例，受控操作并以五例全部实测通过作为核心可用标准。
 
 ## Not yet specified
 
-首批场景明确后可能显现的结构工程特有数据语义与模型操作约束；当前不足以精确提问，不预造统一模型、单位/坐标转换或跨软件流程。若后续发现不需要则清除，清晰问题再毕业成票。
+已选场景中尚可能出现需要进一步决策的结构工程数据语义或模型操作约束；不预设统一模型、单位/坐标转换或跨软件流程。待有可明确提问的独立问题时再建票，若确认不需要则清除。
 
 ## Out of scope
 
