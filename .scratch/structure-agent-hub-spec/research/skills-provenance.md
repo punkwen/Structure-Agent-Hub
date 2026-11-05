@@ -30,7 +30,7 @@
 | 内容差异 | — | 2 个 SKILL.md 含更新的描述文本；etabs 目录结构已扁平化并新增顶层 SKILL.md |
 | `.skill` 打包件 | etabs 一份 | etabs 同一份（SHA-256 `353c22b8…` 完全一致） |
 
-逐项差异（仅 3 处，其余 10 项两树完全一致）：
+逐项差异（共 3 项，其余 9 项两树内容完全一致）：
 
 1. **`dtl-model/SKILL.md`**：`skills/` 份的 description 补充了 `（dtlmodel.ydb）` 文件名；3 处小节标题从「附录 4.3/4.1.1/4.5」改为「dtlModel补.md 附录 …」，与其引用的文档名一致。`docs/dtlModel补.md` 两树逐字节一致。
 2. **`yjk-dsnmodel/SKILL.md`**：`skills/` 份 description 从「dsnModel 数据库结构专家」改为「提供dsnModel.ydb文件的表结构查询…」，补充了具体文件名。`references/dsnmodel_data_reference.md` 两树逐字节一致。
