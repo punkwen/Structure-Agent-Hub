@@ -2,5 +2,4 @@ child_exit_code 0
 run_dir F:\TigerkinProgram\Structure-Agent-Hub\.scratch\structure-agent-hub-spec\issues\09-runtime-evidence\runs\crash
 status_file MISSING
 log_path F:\TigerkinProgram\Structure-Agent-Hub\.scratch\structure-agent-hub-spec\issues\09-runtime-evidence\runs\crash\run.log
-artifact harness.txt 289
 artifact run.log 224

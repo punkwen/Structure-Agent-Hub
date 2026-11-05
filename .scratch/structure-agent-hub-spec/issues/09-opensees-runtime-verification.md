@@ -72,7 +72,7 @@ Parent: ../map.md
 **(d) 合并日志的顺序（附带核验）**
 
 - 子进程 stdout/stderr 指向同一 fd 时，**只有子进程无缓冲**才按真实顺序交织。默认重定向到文件时 `sys.stdout` 为 `write_through=False`（块缓冲），Python print 推迟到进程退出才 flush，日志里 OpenSees stderr 会整体排在脚本 print 之前（[runs/ordering_default/run.txt](09-runtime-evidence/runs/ordering_default/run.txt)）；子进程带 `PYTHONUNBUFFERED=1` 时顺序正确（[runs/ordering_u2/run.txt](09-runtime-evidence/runs/ordering_u2/run.txt)）。缓冲标志对照：[runs/bufcheck_default.txt](09-runtime-evidence/runs/bufcheck_default.txt)、[runs/bufcheck_u.txt](09-runtime-evidence/runs/bufcheck_u.txt)。即：不显式无缓冲启动时，「按行交织」不成立，日志顺序不代表执行顺序。本机 shell 预设了 `PYTHONUNBUFFERED=1`，早期探针因此误判，已用 `env -u` 复测纠正。
-- **新发现的风险**：`ops.integrator("NoSuchIntegrator")` 只打印 WARNING，随后 `analyze()` 触发 LAPACK 错误，**进程直接退出、exit code 0、状态文件未写、脚本后续行未执行**。证据：[runs/crash/harness.txt](09-runtime-evidence/runs/crash/harness.txt)（`child_exit_code 0`、`status_file MISSING`）、[runs/crash/child_log.txt](09-runtime-evidence/runs/crash/child_log.txt)。因此「状态文件缺失」必须判为失败/未知，不能按 exit code 0 判成功。
+- **新发现的风险**：`ops.integrator("NoSuchIntegrator")` 只打印 WARNING，随后 `analyze()` 触发 LAPACK 错误，**进程直接退出、exit code 0、状态文件未写、脚本后续行未执行**。证据：[runs/crash_harness.txt](09-runtime-evidence/runs/crash_harness.txt)（`child_exit_code 0`、`status_file MISSING`）、[runs/crash/child_log.txt](09-runtime-evidence/runs/crash/child_log.txt)。因此「状态文件缺失」必须判为失败/未知，不能按 exit code 0 判成功。
 
 ### 4. 未覆盖 / 不构成结论
 
