@@ -22,6 +22,7 @@ planning only；本轮不写 SPEC 正文或执行源码搬迁；用户列出五�
 - [OpenSees MCP 首批能力应止于哪里](issues/07-opensees-capability-scope.md#answer): 首批只走 OpenSeesPy 跑用户 Python 脚本；runner 写状态文件判完成（不靠日志 token）；不解析结果、不并发、不装运行时；不计入五例核心门槛，仓库起源另票。
 - [核验选定 OpenSees 运行路径的版本兼容性](issues/09-opensees-runtime-verification.md#answer): 本机 CPython 3.12.9 + openseespy 3.8.0.0（`py3-none-win_amd64`）可导入并跑通悬臂解析解；`analyze()` 失败返回负值不抛异常、marker 仍 `TGC_DONE`，且存在返回 0 的静默失败；OpenSees 消息格式不统一（含无前缀与无换行拼接，LAPACK 走 stdout），不能按 token 识别；recorder 相对路径落在子进程 CWD；进程可无状态文件静默退出。
 - [五个现有 MCP 的迁移基线与历史如何保留](issues/10-migration-baseline.md#answer): 五仓留在原目录、Hub 只索引；实施时另记真实 HEAD 与脏改动，未跟踪/忽略内容分类保留，双份独立介质私有归档，公开历史须全量满足既定分发边界否则另建干净基线，路径按受支持链审计，恢复与调用链分别验收。
+- [三类 Agent 与 MCP 如何支持逐次人工确认](issues/11-confirmation-capability-evidence.md#answer): Claude Code/OpenCode 的逐次批准是 `ask` 规则而非不可绕过属性，仅 Claude Code 私有 `requiresUserInteraction` 能强制每次必答；pi 无内建权限系统；MCP elicitation 只能索取数据、不能表达「批准某操作某参数」，三家均无审批台账证据。
 
 ## Not yet specified
 
