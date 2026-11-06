@@ -28,8 +28,8 @@ Parent: ../map.md
 
 ### 逐次批准与允许清单是不同机制，但只有一家能强制
 
-- Claude Code 2.1.318 与 OpenCode v1 1.19.5 / v2 2.2.5 都有原生逐次调用批准（`ask` 规则），且与允许清单、会话级授权同属一套规则引擎的不同结果：Claude Code 求值顺序固定为 deny → ask → allow 且具体程度不改变顺序；OpenCode 为最后匹配生效。pi 1.5.0 **没有**内建权限系统，官方原文即「does not ask for approval before every tool call」，逐次确认只能由扩展的 `tool_call` 处理器实现。
-- 唯一能抵抗权限模式与 allow 规则、做到「每次必答」的是 Claude Code 的私有元数据 `_meta["anthropic/requiresUserInteraction"]`（`acceptEdits`/`auto`/`bypassPermissions` 下仍提示、无 don't-ask-again、allow 规则不生效、`dontAsk` 直接拒绝、非交互 prompt tool 的 allow 被改写为 deny）。它不是 MCP 标准，其他客户端不认。
+- Claude Code 2.1.318 与 OpenCode v1 1.19.5 / v2 2.2.5 都有原生逐次调用批准（`ask` 规则），且与允许清单同属一套规则引擎的不同结果：Claude Code 求值顺序固定为 deny → ask → allow 且具体程度不改变顺序；OpenCode 为最后匹配生效。会话级授权是提示里的另一个选项（如 Claude Code 的「Yes, and don't ask again」、OpenCode 的 `always`），与保存规则不同层。pi 1.5.0 **没有**内建权限系统，官方原文即「does not ask for approval before every tool call」，逐次确认只能由扩展的 `tool_call` 处理器实现。
+- 唯一能抵抗权限模式与 allow 规则、做到「每次必答」的是 Claude Code 的私有元数据 `_meta["anthropic/requiresUserInteraction"]`（`acceptEdits`/`auto`/`bypassPermissions` 下仍提示、无 don't-ask-again、allow 规则不生效、`dontAsk` 直接拒绝、非交互 prompt tool 的 allow 被改写为 deny）。它不是 MCP 标准，其他客户端不认。另：Claude Code 的 MCP 工具权限规则只按工具名匹配，参数级匹配不适用于 MCP 工具；Agent SDK 的 `canUseTool` 回调能收到并批准这类调用（官方称 SDK 应用应自行展示给用户）。
 - OpenCode 的 `always` 会把 `ask` 降级：v1 到会话结束，v2 写**持久**项目 allow 规则。即一次点击即可把逐次确认变成长期放行，`deny` 除外。
 
 ### MCP elicitation 不是审批原语
@@ -41,14 +41,14 @@ Parent: ../map.md
 
 ### 关联性与可核性
 
-- 客户端层：Claude Code 的 `PreToolUse` 带 `tool_use_id`、`tool_input`、`mcp_server{name,source}`，但**权限决策事件 `PermissionRequest` 不带 `tool_use_id`**，要关联需自行旁路；`updatedInput` 整体替换输入并重新过 deny/ask 规则。pi 的 `tool_call` 带 `toolCallId` 与可变 `input`。OpenCode 未提供等价 hook。
+- 客户端层：Claude Code 的 `PreToolUse` 带 `tool_use_id`、`tool_input`、`mcp_server{name,source}`，但**权限决策事件 `PermissionRequest` 不带 `tool_use_id`**，要关联需自行旁路；`updatedInput` 整体替换输入并重新过 deny/ask 规则。pi 的 `tool_call` 带 `toolCallId` 与可变 `input`。OpenCode 未提供等价 hook；v2 在 `tools/call` 的 `_meta["ai.opencode/sessionID"]` 里带会话 ID（请求元数据，非工具参数）。
 - 没有任何一家提供「确认回执 ↔ 实际执行调用」的协议级绑定，也没有第一方证据证明审批记录含操作者身份、可作审计台账。可用间接材料仅 transcript、`permission_denials` 输出、`/permissions` 规则来源、OpenCode v2 的持久模式规则。
 - 票 01 要求的「目标、拟改内容（含原值与新值）、已知影响、分析设置」必须由 MCP 服务器自己组织并放进工具返回或 elicitation 字段，客户端不会替它生成。
 
 ### 客户端中介 vs 直连
 
 - 直连服务器发 `tools/call` 绕过全部客户端机制（权限规则、提示、hook、`requiresUserInteraction`），协议不阻止。中介才获得权限门、参数展示、hook 拦截与强制每次必答。
-- 中介本身会退化：Claude Code 在 `-p`/SDK/cloud 会话无法弹项目服务器审批而直接加载 `.mcp.json` 服务器；`--permission-prompts none` 会取消无人回答的 elicitation；pi 在 print/JSON 模式 `hasUI=false`，扩展必须自行 fail-closed。
+- 中介本身会退化：Claude Code 在 `-p`/SDK/cloud 会话无法弹项目服务器审批而直接加载 `.mcp.json` 服务器；`--permission-prompts none` 会取消无人回答的 elicitation；pi 在 print/JSON 模式 `hasUI=false`，扩展必须自行决定无 UI 时是拒绝还是放行（官方未规定默认，[未知]）。
 
 ### 明确未知
 
