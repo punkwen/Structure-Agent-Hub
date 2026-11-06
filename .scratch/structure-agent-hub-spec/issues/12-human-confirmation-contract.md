@@ -80,3 +80,10 @@ Parent: ../map.md
 
 - [三类 Agent 与 MCP 如何支持逐次人工确认](11-confirmation-capability-evidence.md#answer) 及其 [research 证据稿](https://github.com/punkwen/Structure-Agent-Hub/blob/d96123546fc5f77980eccd11e9e77f940e5bc916/.scratch/structure-agent-hub-spec/research/confirmation-capability.md)。
 - [首批结构工程场景与 Hub 成功标准是什么](01-first-workflows.md#answer)、[仓库如何组织，Skill 与 MCP 如何分工](06-repository-skill-boundary.md#answer)。
+
+## Comments
+
+- 2026-11-06 评审后修正（不改变用户已确认的决策方向，只收紧措辞与适用范围）：
+  - §1 原写「闸门覆盖所有调用路径」，易被读成「闸门证明人已批准」。操作单本身可被任何调用方申请，故改为明确闸门只保证「无单不执行、执行与操作单一致」，人类批准由流程约束与客户端纵深承担。
+  - §5 原要求每个实例都跑「确认后执行、覆盖文件二次确认」，与票 01 的只读实例（ETABS、MIDAS）冲突。改为按 mutating / 只读分设用例，覆盖另设一例（票 01 未指定覆盖实例）。
+  - §3 执行校验补「实际执行参数与操作单逐项一致」；§2 把 `requiresUserInteraction` 归回 MCP 服务器职责；§5 审计措辞由「票 11 证明客户端不提供」改为「无第一方证据证明」。
