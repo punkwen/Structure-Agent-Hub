@@ -79,6 +79,8 @@ Parent: ../map.md
 | `sap2000-s2k-expert` | 36 个 `.s2k` 样例中 26 个含 `LicenseNum=`（8 个取值），按[哪些源码、依赖与产物可以纳入和分发](05-distribution-boundary.md#answer) §5 属永不发布项；文件名含疑似真实工程名。Skill 正文显式引用这些样例，故整项排除，不做「只索引手册」。 |
 | `3d3s-expert` | 6 个 `.3d3s` 样例含第三方导出标记（`Euler2025 SR10`、`Grida R2025`），来源未知；且 3D3S 不在五个 MCP 之列。 |
 
+**未取证、不在本票范围**：票 13 §4 移交的相邻条目——`TigerkinClaw/`（6 个 YJK/AutoCAD 工作流 Skill）与 `Obsidian/llm-wiki-yjk-out-check`（YJK 输出审查）——主题上与结构专业相邻，但不在 `StructureDev` 口径内，票 13 未对其取证。用户于 2026-11-06 确认**不纳入本票范围**：本票的「12 项已审」只覆盖 `skills/structure-software-dev/` 下的 12 项，不构成对 `tigerkin-skills` 全仓结构相关 Skill 的完整审查。将来若要纳入，须另开 research 票取证后再决策。
+
 ### 6. 来源唯一化
 
 - 索引来源固定为 `skills/structure-software-dev/`；仓库根 `StructureDev/` 是陈旧副本（票 13 §3），**不再作为索引来源**。
