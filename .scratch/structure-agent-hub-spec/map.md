@@ -25,6 +25,7 @@ planning only；本轮不写 SPEC 正文或执行源码搬迁；用户列出五�
 - [三类 Agent 与 MCP 如何支持逐次人工确认](issues/11-confirmation-capability-evidence.md#answer): Claude Code/OpenCode 的逐次批准是 `ask` 规则而非不可绕过属性，仅 Claude Code 私有 `requiresUserInteraction` 能强制每次必答；pi 无内建权限系统；MCP elicitation 只能索取数据、不能表达「批准某操作某参数」，三家均无审批台账证据。
 - [现有结构专业 Skill 的来源与公开引用条件是什么](issues/13-existing-skills-provenance.md#answer): tigerkin-skills 两份副本判定以 `skills/structure-software-dev/` 为准；12 个候选 Skill 全部无许可文本，第三方材料（CSI/Berkeley/厂商文档）权利一律 `NOASSERTION`，s2k 样例中的许可证号按分发边界属永不发布项，当前无一满足公开引用条件；Gitee 可见性未核实。
 - [如何落实工程师逐次确认的保障与验收](issues/12-human-confirmation-contract.md#answer): 服务器侧操作单闸门为主（无单不执行、参数与目标须与操作单一致），客户端逐次 ask 为纵深，流程文档约束人侧；闸门不能证明提交者是人；验收按 mutating/只读实例分设用例并另设覆盖例；无第一方证据证明客户端提供操作者身份。
+- [哪些现有结构专业 Skill 可以纳入 Hub 索引](issues/14-existing-skills-index-scope.md#answer): 公开索引只写非敏感私有标识（不写 Gitee URL）；12 项候选中仅 `midas-api` 纳入（用户声明自撰、未检出第三方正文、未验证），其余 11 项整项排除且理由只记于票内；来源固定 `skills/structure-software-dev/`，`StructureDev/` 不再作为来源；不改变只索引不复制与 GPL 边界。
 
 ## Not yet specified
 
