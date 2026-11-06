@@ -30,10 +30,10 @@ Parent: ../map.md
 ### 2. 一次部署操作的选择面
 
 - 选择面只有两项：**客户端** + **作用域**。
-- **不提供逐组件勾选**：一次部署注册的候选集合是**五个现有 MCP + OpenSees**（前者由 [五个现有 MCP 的迁移基线与历史如何保留](10-migration-baseline.md#answer) 固定，后者形态由 [OpenSees MCP 的仓库起源与首发基线如何确定](15-opensees-mcp-repository-origin.md) 决定）；逐组件勾选不提供，因为各组件的前置与可用性尚未逐项验证。
+- **不提供逐组件勾选**：组件清单取决于 [五个现有 MCP 的迁移基线与历史如何保留](10-migration-baseline.md#answer) 与 [哪些现有结构专业 Skill 可以纳入 Hub 索引](14-existing-skills-index-scope.md#answer)，未定前不造选择面。**具体注册哪几个 server 属实施阶段，本票不预设。**
 - 部署写入两类内容：
   1. **MCP 注册条目**：`command`/`args` 指向用户已有的可执行文件；**不复制源码、不构建、不打包**（[仓库如何组织，Skill 与 MCP 如何分工](06-repository-skill-boundary.md#answer) 的独立仓库边界）。
-  2. **Hub 自有 `Skill/` 目录下的 Skill**（当该目录存在已发布 Skill 时）：复制到客户端技能目录——Claude Code `~/.claude/skills/<name>/`（user）或 `.claude/skills/<name>/`（project），pi `~/.pi/agent/skills/<name>/` 或 `.pi/skills/<name>/`。同名目录已存在即停止并报告，不覆盖；写入后须能通过 `/skills`（Claude Code）或 `/skill:<name>`（pi）观测到，否则不算「已加载」。
+  2. **Hub 自有 `Skill/` 目录下的 Skill**（当该目录存在已发布 Skill 时）：放入客户端技能目录。目标位置按 [三类 Agent 实际支持哪些 Skill 与 MCP 接入方式](03-agent-integration-evidence.md#answer) 取证的位置（Claude Code `~/.claude/skills/<name>/` 或 `.claude/skills/<name>/`；pi `~/.pi/agent/skills/<name>/` 或 `.pi/skills/<name>/`）；同名目录已存在即停止并报告，沿用 §4 的同名即停原则。**Skill 分发的具体形态（复制/链接、目录布局、加载观测项）属实施阶段，本票不预设。**
 - **不安装** `midas-api`（[哪些现有结构专业 Skill 可以纳入 Hub 索引](14-existing-skills-index-scope.md#answer) 定为只索引、不复制）。
 - 不安装运行时或厂商软件，不写凭据（[哪些源码、依赖与产物可以纳入和分发](05-distribution-boundary.md#answer) §4/§5）。
 
@@ -79,6 +79,7 @@ Parent: ../map.md
 - 该缺口是**已知缺口**，列入 §9「明确不声称」，不得表述为 pi 已具备逐次确认保障。
 - 依据 [如何落实工程师逐次确认的保障与验收](12-human-confirmation-contract.md#answer) §1：主闸门在 MCP 服务器侧操作单，客户端层只提高可见性与拦截率、**不作为唯一保障**；服务器侧闸门对 pi 的调用同样生效。
 - **不交付、不依赖**第三方 `pi-mcp-adapter`。
+- **OpenCode**：不在首批承诺面（§1），故 [如何落实工程师逐次确认的保障与验收](12-human-confirmation-contract.md#answer) §2 要求的 `ask` 规则与 `always` 降级风险说明**不适用于首批**；将来若纳入 OpenCode，须先补齐该说明，不得默认沿用。
 
 ### 8. 更新、卸载与非原生扩展
 
@@ -116,8 +117,9 @@ Parent: ../map.md
 - 2026-11-06 评审后修正（不改变用户已确认的决策方向，只收紧措辞与补齐缺口）：
   - §1 原写「实测锚点」，与 §9「未运行任何客户端命令」自相矛盾；改为「取证锚点」并注明来源是 npm registry 元数据。`legacy-node20` 0.74.2 由「不具备」改为「不能假定具备」，与 03 的原始措辞一致。
   - §1 宿主软件版本边界补明去向（SPEC 正文与实施阶段逐适配器确定），不再只写「未定」。
-  - §2 补明一次部署的候选集合（五个现有 MCP + OpenSees），并给 Skill 分发补上目标路径、同名冲突规则与加载观测项——原稿只写「放入客户端技能目录」，既无冲突规则也无验收。
+  - §2 原稿只写「放入客户端技能目录」，无冲突规则也无验收。补上「同名即停」与取证到的目标位置，但**具体分发形态（复制/链接、目录布局、加载观测项）与「注册哪几个 server」明确标为实施阶段、本票不预设**——用户只确认了 8 条推荐答案，不替未确认项造共识。
   - §3 补 `-s user`：`claude mcp add` 默认是 `local`，同样写 `~/.claude.json` 但只对当前项目生效，不显式指定会被误判为已部署。
   - §4 删除本机具体条目清单（含 OpenCode 的 `context7`，而 §1 已不承诺 OpenCode），只保留「已存在指向五个 MCP 的条目、不得覆盖」这一约束；具体条目属用户私有配置。
   - §7 把「不交付 pi 扩展」明确标为对 12 §2 的**显式收窄**（原稿只写「已知缺口」，读起来像 12 未要求）；`requiresUserInteraction` 的「每次必答」补上 `dontAsk`/非交互的例外。
+  - §7 补 OpenCode 一行：其 `ask` 规则与 `always` 降级风险说明因 §1 已排除 OpenCode 而不适用于首批，但保留为将来纳入时的前置要求，不静默删除 12 的该条要求。
   - 认领（`Status: claimed`）是本会话第一项写入，但与 Answer 落在同一提交，未单独成 commit；过程记录不完整，结论状态无误。
