@@ -24,6 +24,7 @@ planning only；本轮不写 SPEC 正文或执行源码搬迁；用户列出五�
 - [五个现有 MCP 的迁移基线与历史如何保留](issues/10-migration-baseline.md#answer): 五仓留在原目录、Hub 只索引；实施时另记真实 HEAD 与脏改动，未跟踪/忽略内容分类保留，双份独立介质私有归档，公开历史须全量满足既定分发边界否则另建干净基线，路径按受支持链审计，恢复与调用链分别验收。
 - [三类 Agent 与 MCP 如何支持逐次人工确认](issues/11-confirmation-capability-evidence.md#answer): Claude Code/OpenCode 的逐次批准是 `ask` 规则而非不可绕过属性，仅 Claude Code 私有 `requiresUserInteraction` 能强制每次必答；pi 无内建权限系统；MCP elicitation 只能索取数据、不能表达「批准某操作某参数」，三家均无审批台账证据。
 - [现有结构专业 Skill 的来源与公开引用条件是什么](issues/13-existing-skills-provenance.md#answer): tigerkin-skills 两份副本判定以 `skills/structure-software-dev/` 为准；12 个候选 Skill 全部无许可文本，第三方材料（CSI/Berkeley/厂商文档）权利一律 `NOASSERTION`，s2k 样例中的许可证号按分发边界属永不发布项，当前无一满足公开引用条件；Gitee 可见性未核实。
+- [如何落实工程师逐次确认的保障与验收](issues/12-human-confirmation-contract.md#answer): 服务器侧操作单闸门为主（覆盖直连与非交互），客户端逐次 ask 为纵深，流程文档约束人侧；确认绑定到操作单 ID 与目标版本，目标变化即作废重确认；验收并入五实例并加闸门用例，审计记录不含操作者身份。
 
 ## Not yet specified
 
