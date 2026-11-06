@@ -26,6 +26,7 @@ planning only；本轮不写 SPEC 正文或执行源码搬迁；用户列出五�
 - [现有结构专业 Skill 的来源与公开引用条件是什么](issues/13-existing-skills-provenance.md#answer): tigerkin-skills 两份副本判定以 `skills/structure-software-dev/` 为准；12 个候选 Skill 全部无许可文本，第三方材料（CSI/Berkeley/厂商文档）权利一律 `NOASSERTION`，s2k 样例中的许可证号按分发边界属永不发布项，当前无一满足公开引用条件；Gitee 可见性未核实。
 - [如何落实工程师逐次确认的保障与验收](issues/12-human-confirmation-contract.md#answer): 服务器侧操作单闸门为主（无单不执行、参数与目标须与操作单一致），客户端逐次 ask 为纵深，流程文档约束人侧；闸门不能证明提交者是人；验收按 mutating/只读实例分设用例并另设覆盖例；无第一方证据证明客户端提供操作者身份。
 - [哪些现有结构专业 Skill 可以纳入 Hub 索引](issues/14-existing-skills-index-scope.md#answer): 公开索引只写非敏感私有标识（不写 Gitee URL）；12 项候选中仅 `midas-api` 纳入（用户声明自撰、未检出第三方正文、未验证），其余 11 项整项排除且理由只记于票内；来源固定 `skills/structure-software-dev/`，`StructureDev/` 不再作为来源；不改变只索引不复制与 GPL 边界。
+- [一键部署应承诺什么行为与验收结果](issues/08-deployment-contract.md#answer): 仅 Windows x64 + Claude Code ≥2.1.318 + pi ≥1.5.0（下限+锚点，OpenCode 不承诺）；选择面只有客户端+作用域，默认 user 作用域，pending/未信任一律算未部署；走官方 CLI、同名条目即停不覆盖；预检缺失默认中止；只承诺「已写入/已加载」，能力可用由五例人工验收；不承诺更新/卸载，只给删除清单；pi 无技术闸门为已知缺口，只认 `builtin:mcp`。
 
 ## Not yet specified
 
